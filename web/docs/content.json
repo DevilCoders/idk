@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "projectName": "Unified Automation Platform",
+    "defaultVersion": "1.1",
+    "versions": [
+      { "id": "1.1", "label": "Stable" },
+      { "id": "1.0", "label": "Previous" },
+      { "id": "next", "label": "Preview" }
+    ],
+    "tags": [
+      "ci/cd",
+      "automation",
+      "security",
+      "infrastructure"
+    ]
+  },
+  "sections": [
+    {
+      "id": "guides",
+      "title": "Guides",
+      "description": "End-to-end tutorials for shipping automation workflows.",
+      "pages": [
+        {
+          "id": "getting-started",
+          "version": "1.1",
+          "title": "Getting Started",
+          "summary": "Install the toolkit, bootstrap environments, and publish your first deployment pipeline.",
+          "tags": ["install", "bootstrap"],
+          "body": [
+            {
+              "type": "paragraph",
+              "content": "The Unified Automation Platform ships with polyglot components for CI/CD, analytics, and compliance. To get started, install the command line utilities and initialize your workspace."
+            },
+            {
+              "type": "code",
+              "language": "bash",
+              "content": "curl -sSL https://example.com/install.sh | bash\ninfra init --template enterprise"
+            },
+            {
+              "type": "checklist",
+              "items": [
+                "Provision shared secrets for each environment",
+                "Register Git, cloud, and observability integrations",
+                "Invite team members and assign least-privilege roles"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": "After initialization, explore the dashboard at /web/index.php to monitor build progress in real time."
+            }
+          ]
+        },
+        {
+          "id": "progressive-delivery",
+          "version": "1.1",
+          "title": "Progressive Delivery",
+          "summary": "Release confidently with multi-stage deploys, automated health checks, and instant rollbacks.",
+          "tags": ["deployment", "monitoring"],
+          "body": [
+            {
+              "type": "paragraph",
+              "content": "Progressive delivery coordinates canary, blue/green, and feature flag strategies across heterogeneous runtimes. Configure a release track to define promotion criteria."
+            },
+            {
+              "type": "quote",
+              "content": "Promotion rules are evaluated continuously. Failing service level objectives pause the rollout automatically."
+            },
+            {
+              "type": "code",
+              "language": "yaml",
+              "content": "tracks:\n  - name: production\n    strategy: canary\n    gates:\n      - type: error_budget\n        threshold: 2%\n      - type: latency\n        p95: 250ms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "docs",
+      "title": "Documentation",
+      "description": "Deep dives into platform architecture, APIs, and operating models.",
+      "pages": [
+        {
+          "id": "architecture",
+          "version": "1.1",
+          "title": "Platform Architecture",
+          "summary": "Understand service boundaries, data flows, and the security envelope.",
+          "tags": ["architecture", "security"],
+          "body": [
+            {
+              "type": "paragraph",
+              "content": "The platform is split into language-specific execution engines coordinated by the SmartPipeline orchestrator. Unified telemetry captures every stage for analytics and auditing."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Java orchestration with resilient job scheduling",
+                "Python analytics and ML forecasting services",
+                "Go dependency resolver and package mirror",
+                "C++ performance probes for critical paths",
+                "PHP/Tailwind control plane with granular RBAC"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": "All services emit OpenTelemetry traces and share a unified configuration manifest for deterministic builds."
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "version": "1.0",
+          "title": "Security Posture",
+          "summary": "Apply zero-trust defaults and orchestrate compliance workflows.",
+          "tags": ["security", "compliance"],
+          "body": [
+            {
+              "type": "paragraph",
+              "content": "Security spans SAST, DAST, software composition analysis, and contextual policy checks. Every environment inherits secret rotation and tamper-evident audit logging."
+            },
+            {
+              "type": "code",
+              "language": "json",
+              "content": "{\n  \"policies\": [\n    { \"name\": \"soc2\", \"status\": \"continuous\" },\n    { \"name\": \"hipaa\", \"status\": \"attested\" }\n  ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Definitive source for CLI commands, REST endpoints, and configuration schema.",
+      "pages": [
+        {
+          "id": "cli",
+          "version": "1.1",
+          "title": "CLI Commands",
+          "summary": "Automation CLI reference with contextual examples.",
+          "tags": ["cli", "reference"],
+          "body": [
+            {
+              "type": "table",
+              "headers": ["Command", "Description", "Example"],
+              "rows": [
+                ["infra init", "Initialize a workspace", "infra init --template enterprise"],
+                ["infra deploy", "Execute a multi-target deploy", "infra deploy --targets java,python"]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": "Use --dry-run to preview infrastructure mutations and policy evaluations without applying changes."
+            }
+          ]
+        },
+        {
+          "id": "api",
+          "version": "next",
+          "title": "API Reference",
+          "summary": "Comprehensive REST and GraphQL endpoint catalog.",
+          "tags": ["api", "graphql"],
+          "body": [
+            {
+              "type": "paragraph",
+              "content": "All endpoints require OAuth 2.0 machine-to-machine credentials with scoped permissions."
+            },
+            {
+              "type": "code",
+              "language": "graphql",
+              "content": "query Pipelines {\n  pipelines {\n    id\n    name\n    status\n  }\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

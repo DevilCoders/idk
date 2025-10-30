@@ -1,0 +1,8 @@
+{
+  "name": "unified-platform",
+  "endpoints": [
+    {"name": "triggerPipeline", "method": "POST"},
+    {"name": "getDashboard", "method": "GET"},
+    {"name": "submitInsight", "method": "POST"}
+  ]
+}
