@@ -1,0 +1,24 @@
+policies:
+  secret_management:
+    provider: vault
+    rotation_days: 30
+  sast:
+    tools:
+      - semgrep
+      - bandit
+  dast:
+    schedule: nightly
+    endpoints:
+      - https://staging.example.com
+  compliance:
+    frameworks:
+      - SOC2
+      - HIPAA
+      - ISO27001
+  access_control:
+    model: attribute-based
+    permissions:
+      - name: pipeline:trigger
+        description: Trigger CI/CD workflows
+      - name: dashboard:view
+        description: View monitoring dashboards

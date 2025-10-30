@@ -1,0 +1,9 @@
+[
+  {"stage": "TRIGGER", "success": true, "summary": "Webhook trigger accepted"},
+  {"stage": "BUILD", "success": true, "summary": "Polyglot build graph executed"},
+  {"stage": "TEST", "success": true, "summary": "Smart tests executed across JVM, Python and PHP"},
+  {"stage": "ANALYZE", "success": true, "summary": "Static analysis coverage: 87.5"},
+  {"stage": "SECURITY_SCAN", "success": true, "summary": "SAST/DAST scan summary generated"},
+  {"stage": "DEPLOY", "success": true, "summary": "Immutable artifact bundles published"},
+  {"stage": "MONITOR", "success": true, "summary": "Telemetry streaming to unified dashboard"}
+]
