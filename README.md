@@ -73,6 +73,8 @@ presented as a rich card summarising location, size, and the latest scan
 timestamp so you can orchestrate high-signal runs across sprawling mono code
 bases.
 
+![Alt text](https://github.com/DevilCoders/idk/blob/master/monorepo-dashboard.png)
+
 ### Inspect dependencies
 
 ```bash
