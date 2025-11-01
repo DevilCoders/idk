@@ -15,7 +15,8 @@ C++ with a dynamic PHP/Tailwind dashboard that visualises the unified pipeline.
 - **Unified dependency management** exposed through a Go command line utility
   reading a single manifest file.
 - **Dynamic website** powered by PHP, TailwindCSS and vanilla JavaScript for
-  surfacing deployment options, dependencies and live pipeline state.
+  surfacing deployment options, dependencies, monorepo intelligence, and live
+  pipeline state.
 
 ## Getting started
 
@@ -47,6 +48,30 @@ php -S localhost:8080 -t web
 ```
 
 Navigate to `http://localhost:8080` to inspect the unified control plane.
+
+#### Explore dependency and language policies
+
+The **Dependency & Language Configuration Hub** lets you curate runtime rules
+without leaving the dashboard. Use the tabbed interface to:
+
+- Register new dependencies and instantly render them inside the manifest
+  overview table.
+- Extend language coverage by declaring package managers, target frameworks,
+  and coverage expectations.
+- Enrol large codebases—local paths, GitHub, or GitLab URLs—and monitor their
+  scale and scan freshness alongside the rest of the estate.
+
+All interactions occur client-side so you can experiment safely before wiring
+the UI into an API of your choosing.
+
+#### Operate the monorepo observatory
+
+The dashboard now includes a **Large Monorepo Observatory** purpose-built for
+petabyte-scale repositories. Configure distributed scans across local
+checkouts, GitHub, or GitLab by populating the codebases tab. Each target is
+presented as a rich card summarising location, size, and the latest scan
+timestamp so you can orchestrate high-signal runs across sprawling mono code
+bases.
 
 ### Inspect dependencies
 
